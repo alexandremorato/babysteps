@@ -1,0 +1,26 @@
+---
+test_name: Busca por post pelo ID
+
+stages:
+  - name: Endpoint posts 
+    request:
+      url: https://jsonplaceholder.typicode.com/posts/1
+      method: GET
+    response:
+      status_code: 200
+      body:
+        userId: 1
+        id: 1
+        title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
+
+---
+test_name: Página não encontrada
+
+stages:
+  - name: Page 404
+    
+    request:
+      url: https://jsonplaceholder.typicode.com/response/1
+      method: GET
+    response:
+      status_code: 404
