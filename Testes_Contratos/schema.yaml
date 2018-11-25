@@ -1,0 +1,11 @@
+type: map
+required: True
+mapping:
+  userId:
+    type: int
+  id:
+    type: int
+  title:
+    type: str
+  body:
+    type: str

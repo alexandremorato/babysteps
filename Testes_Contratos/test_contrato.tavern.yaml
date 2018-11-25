@@ -1,0 +1,15 @@
+test_name: Teste de contrato
+
+stages:
+  - name: End point POSTS
+    request:
+      url: https://jsonplaceholder.typicode.com/posts/1
+      method: GET
+    
+    response:
+      status_code: 200
+      body:
+        $ext:
+          function: tavern.testutils.helpers:validate_pykwalify
+          extra_kwargs:
+            schema: !include schema.yaml            
